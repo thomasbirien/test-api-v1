@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
   def check_the_pseudo(pseudo)
-    message = User.exists?(pseudo: pseudo) ? (pseudo = generate_new_pseudo(pseudo)) : "ok"
+    message = User.exists?(pseudo: pseudo) ? (pseudo = generate_new_pseudo(pseudo)) : "OK"
     self.pseudo = pseudo
     json_to_prepare = {message: message}
   end
